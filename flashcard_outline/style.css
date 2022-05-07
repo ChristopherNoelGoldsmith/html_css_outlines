@@ -1,8 +1,137 @@
-body>*>* {
-    border: 1px solid black;
-    margin: 3px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-body>*>*>* {
-    border: 1px solid black;
+body {
+    width: 80vw;
+    margin: auto;
+    background: slateblue;
+}
+
+/*navbar*/
+
+nav#navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+nav#navbar h1 {
+    font-size: 2rem;
+    text-align: left;
+    padding: 10px;
+}
+
+#check-toggle {
+    opacity: 0;
+    top: 2vh;
+    right: 10vw;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    z-index: 1000;
+}
+
+#check-toggle:hover {
+    cursor: pointer;
+}
+
+#check-toggle-btn {
+    top: 2vh;
+    right: 10vw;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    z-index: 100;
+}
+
+/*Menun*/
+nav #menu-btn {
+    display: none;
+}
+
+input:checked~nav #menu-btn {
+    display: block;
+}
+
+input:checked~nav #menu-btn ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    padding: 10%;
+    list-style: none;
+}
+
+input:checked~nav #menu-btn ul li {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin: 10px auto;
+    background: ivory;
+}
+
+
+input:checked~nav #menu-btn #overlay {
+    display: block;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(25, 25, 25, 0.5);
+
+}
+
+/*flashcard display*/
+#flashcards #card-display {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    color: seashell;
+    font-size: 1.3rem;
+    margin: 0 auto 2vh auto;
+    border: 1px black solid;
+    background: rgba(25, 25, 25, 0.9);
+}
+
+#flashcards #card-display p {
+    display: none;
+}
+
+#flashcards #card-display p.vis {
+    display: block;
+}
+
+#flashcards .btn-container {
+    display: flex;
+    margin: 0 auto;
+    width: 60vw;
+    align-items: center;
+}
+
+#flashcards .btn-container button {
+    width: 30vw;
+    padding: 5px;
+}
+
+/*Utility*/
+.card {
+    border-radius: 10px;
+}
+
+.button {
+    border: none;
+    background: black;
+    color: greenyellow;
+    border-radius: 5px;
+}
+
+.button:hover {
+    opacity: 0.8;
 }

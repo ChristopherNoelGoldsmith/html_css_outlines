@@ -3,21 +3,97 @@
 
     <head>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/bootstrap-grid.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0">
         <script src="./js/bootstrap.js"></script>
+
         <title>Bootstrap</title>
     </head>
 
-    <body>
+    <body class="">
+        <header>
+            <input class="check-toggle" type="checkbox" name=""
+                id="check-toggle">
+            <button id="check-toggle-btn" class="button">Menu</button>
+            <nav id="navbar">
+                <h1 class=" col-sm-9">Flashcard Maker 2022!</h1>
+                <section id="menu-btn" class="col-sm-3">
+                    <div id="overlay"></div>
+                    <ul class="card">
+                        <li onClick={startFlashCardsHanlder} class="">
+                            {flashcardContent}
+                            <button class="button">Delete</button>
+                        </li>
 
-        <div class="container">
+                        <li onClick={startFlashCardsHanlder} class="">
+                            {flashcardContent}
+                            <button class="button">Delete</button>
+                        </li>
+
+                        <li onClick={startFlashCardsHanlder} class="">
+                            {flashcardContent}
+                            <button class="button">Delete</button>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </header>
+
+        <section class="row">
+            <h3 class="">Create Your Flashcard</h3>
+            <form onSubmit={startFlashCardsHanlder} action="" class="row">
+
+                <figure class="col-sm-6 row">
+                    <label class="col-sm-12"
+                        for="">Question:</label><textarea class="" name=""
+                        id="" cols="30" rows="8"></textarea>
+                </figure>
+                <figure class="col-sm-6 row">
+                    <label class="col-sm-12"
+                        for="">Answer:</label><textarea class="" name=""
+                        id="" cols="30" rows="8"></textarea>
+                </figure>
+
+                <figure class="col-sm-6">
+                    <label for="">Save Flashcards</label><input
+                        type="checkbox" name="" id="">
+                </figure>
 
 
-        </div>
+                <button type="submit"
+                    class="col-sm-6 button">Start</button>
+
     </body>
+
+
+    <template>
+
+        <section class="">
+            <div id="flashcards" class="row">
+                <div id="card-display" class="card col-sm-12">
+                    <p class="vis">{card.question}</p>
+                    <p>{card.answer}</p>
+                </div>
+
+                <div class="btn-container">
+                    <button onClick="{backCardHandler}"
+                        class="back-btn button">Back</button>
+                    <button onClick="{nextCardHandler}"
+                        class="forward-btn button">Forward</button>
+                </div>
+
+            </div>
+        </section>
+
+
+        </form>
+        </section>
+
+
+
+    </template>
 
 </html>
